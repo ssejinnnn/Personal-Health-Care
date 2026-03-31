@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="home-page">
+    <section class="hero-card">
+      <div class="sticker sticker-one">CARE YOURSELF</div>
+      <div class="sticker sticker-two">Ꙭ̮</div>
+      <div class="checker checker-top"></div>
+      <div class="checker checker-bottom"></div>
+
+      <div class="hero-left">
+        <p class="eyebrow">personal health care Ꙭ̮</p>
+
+        <div class="hello-wrap">
+          <h1 id="heroHello" class="hero-title">HELLOꙬ̮</h1>
+          <p class="hero-sub">Type your name and press Enter</p>
+        </div>
+
+        <form id="profileForm" class="profile-form">
+          <div class="input-group">
+            <label for="nameInput">Name * </label>
+            <input
+              type="text"
+              id="nameInput"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div class="input-row">
+            <div class="input-group">
+              <label for="heightInput">Height</label>
+              <input type="number" id="heightInput" placeholder="cm" min="0" />
+            </div>
+
+            <div class="input-group">
+              <label for="weightInput">Weight</label>
+              <input type="number" id="weightInput" placeholder="kg" min="0" />
+            </div>
+          </div>
+
+          <div class="input-row">
+            <div class="input-group">
+              <label for="birthdayInput">Birthday</label>
+              <input type="date" id="birthdayInput" />
+            </div>
+
+            <div class="input-group">
+              <label for="photoInput">Photo</label>
+              <input type="file" id="photoInput" accept="image/*" />
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button type="submit" class="main-btn">Save Profile</button>
+            <a href="../dashboard/index.html" class="sub-btn">Dashboard</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="hero-right">
+        <div class="preview-card">
+          <div class="preview-photo-wrap">
+            <img id="profilePreview" class="profile-preview hidden" src="" alt="Profile preview" />
+            <div id="photoPlaceholder" class="photo-placeholder">NO PHOTO</div>
+          </div>
+
+          <div class="preview-info">
+            <h2 id="previewName">Your name</h2>
+            <p id="previewHeight">Height: —</p>
+            <p id="previewWeight">Weight: —</p>
+            <p id="previewBirthday">Birthday: —</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
