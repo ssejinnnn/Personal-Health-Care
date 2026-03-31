@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="exercise-page">
+    <div class="page-shell">
+      <header class="topbar">
+        <a href="../dashboard/index.html" class="nav-btn">← Dashboard</a>
+
+        <div class="top-tags">
+          <div class="tag orange">PERSONAL HEALTH CARE</div>
+        </div>
+
+        <div class="top-right">
+          <div class="tag mint">STEPS CARE</div>
+          <button id="saveBtnTop" class="save-circle" type="button">Save</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <h1>Steps</h1>
+        <p>
+          Slide the footprint along the staircase to adjust your steps.
+          The more you move, the more prints build up through the path.
+        </p>
+      </section>
+
+      <section class="main-grid">
+        <div class="left-panel">
+          <div class="visual-card">
+            <div class="visual-inner">
+              <div class="scene staircase-scene">
+                <div
+                  id="stepsSlider"
+                  class="steps-slider staircase-slider"
+                  aria-label="Steps slider"
+                  role="slider"
+                  tabindex="0"
+                  aria-valuemin="0"
+                  aria-valuemax="15"
+                  aria-valuenow="6"
+                >
+                  <svg class="stairs-svg" viewBox="0 0 600 500" preserveAspectRatio="none" aria-hidden="true">
+                    <path
+                      id="stairsPath"
+                      class="stairs-path"
+                      d="M90 410 L90 350 L220 350 L220 275 L350 275 L350 190 L480 190 L480 110 L560 110"
+                    />
+                  </svg>
+
+                  <div id="trailLayer" class="trail-layer"></div>
+
+                  <button id="walkerHandle" class="walker-handle single-foot-handle" type="button" aria-label="Drag footprint">
+                    <div class="single-foot">
+                      <div class="toe t1"></div>
+                      <div class="toe t2"></div>
+                      <div class="toe t3"></div>
+                      <div class="toe t4"></div>
+                      <div class="toe t5"></div>
+                      <div class="sole"></div>
+                    </div>
+                  </button>
+                </div>
+
+                <div class="slider-labels">
+                  <span>0k</span>
+                  <span>15k</span>
+                </div>
+
+                <div class="drag-hint">Slide along the stair path</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-panel">
+          <div class="stats-row right-stats">
+            <div class="mini-stat">
+              <span class="mini-label">TODAY</span>
+              <strong><span id="stepsValueTop">6.0</span>k</strong>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-label">GOAL</span>
+              <strong>10.0k</strong>
+            </div>
+          </div>
+
+          <div class="control-card">
+            <h2>Adjust your steps</h2>
+            <p class="control-copy">
+              The footprint itself is the slider. Pull it higher through the staircase to show more movement throughout the day.
+            </p>
+
+            <div class="quick-row">
+              <button class="quick-btn" type="button" data-add="-2">-2k</button>
+              <button class="quick-btn" type="button" data-add="-1">-1k</button>
+              <button class="quick-btn" type="button" data-add="1">+1k</button>
+              <button class="quick-btn" type="button" data-add="2">+2k</button>
+            </div>
+          </div>
+
+          <div class="mood-card">
+            <h2>Steps Mood</h2>
+            <p id="stepsMessage">A nice steady pace. Your trail is building cleanly through the day.</p>
+
+            <div class="mood-bar">
+              <div id="moodBarFill" class="mood-bar-fill"></div>
+            </div>
+
+            <div class="mood-scale">
+              <span>0</span>
+              <span>7.5</span>
+              <span>15</span>
+            </div>
+
+            <div class="mood-meta">
+              <span id="stepsMood">Strong balance</span>
+              <strong><span id="stepsValueBottom">6.0</span>k</strong>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button id="saveBtn" class="main-btn filled" type="button">Save</button>
+            <button id="resetBtn" class="main-btn" type="button">Reset</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+:root{
+  --blue-bg: #2b54b9;
+  --soft-blue-bg: #5a80d6;
+  --red-bg: #ef5a5a;
+  --white: #ffffff;
+  --yellow: #ffd76d;
+  --cream: #efe8b7;
+  --orange: #d57b33;
+  --brown: #6f6756;
+  --gray-foot: #746d5d;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: 'Baloo 2', sans-serif;
+}
+
+.result-page{
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.result-page.good{
+  background: var(--blue-bg);
+}
+
+.result-page.bad{
+  background: var(--red-bg);
+}
+
+.deco-layer{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.result-wrap{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.speech-bubble{
+  position: relative;
+  width: min(860px, 88vw);
+  padding: 42px 36px;
+  border-radius: 42px;
+  background: rgba(255,255,255,0.08);
+  border: 4px solid rgba(255,255,255,0.95);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.12),
+    0 0 0 8px rgba(255,255,255,0.08);
+  text-align: center;
+}
+
+.speech-bubble::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -22px;
+  transform: translateX(-50%) rotate(45deg);
+  width: 34px;
+  height: 34px;
+  background: rgba(255,255,255,0.08);
+  border-right: 4px solid rgba(255,255,255,0.95);
+  border-bottom: 4px solid rgba(255,255,255,0.95);
+}
+
+.result-top,
+.result-bottom{
+  margin: 0;
+  color: var(--white);
+  text-align: center;
+}
+
+.result-top{
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 1;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.result-bottom{
+  font-size: clamp(2.2rem, 5.2vw, 4.8rem);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.result-actions{
+  margin-top: 54px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.result-btn{
+  text-decoration: none;
+  border: 3px solid rgba(255,255,255,0.95);
+  color: var(--white);
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.12);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.result-btn:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.2);
+}
+
+.result-btn.ghost{
+  background: transparent;
+}
+
+/* good mode stairs */
+.result-stair{
+  position: absolute;
+  opacity: 0.22;
+  animation: floatDeco 4.5s ease-in-out infinite;
+}
+
+.result-stair svg{
+  display: block;
+  overflow: visible;
+}
+
+.result-stair path{
+  fill: none;
+  stroke: rgba(255, 245, 190, 0.85);
+  stroke-width: 28;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+/* footprint shared */
+.result-foot{
+  position: absolute;
+  transform-origin: center center;
+}
+
+.result-foot .sole{
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  border-radius: 56% 56% 44% 44% / 58% 58% 42% 42%;
+}
+
+.result-foot .toe{
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* good = orange handle-like foot */
+.result-foot.good .sole,
+.result-foot.good .toe{
+  background: rgba(255, 214, 109, 0.95);
+  box-shadow: 0 0 20px rgba(255, 215, 109, 0.22);
+}
+
+/* bad = muted footprint */
+.result-foot.bad .sole,
+.result-foot.bad .toe{
+  background: rgba(255,255,255,0.88);
+}
+
+/* large footprint */
+.result-foot.large{
+  width: 42px;
+  height: 58px;
+  animation: pulseFoot 2.2s ease-in-out infinite;
+}
+
+.result-foot.large .sole{
+  width: 24px;
+  height: 34px;
+}
+
+.result-foot.large .t1{ width: 5px; height: 5px; top: 9px; left: 5px; }
+.result-foot.large .t2{ width: 5px; height: 5px; top: 6px; left: 11px; }
+.result-foot.large .t3{ width: 5px; height: 5px; top: 9px; left: 17px; }
+.result-foot.large .t4{ width: 4px; height: 4px; top: 13px; left: 22px; }
+.result-foot.large .t5{ width: 4px; height: 4px; top: 17px; left: 26px; }
+
+/* small footprint */
+.result-foot.small{
+  width: 26px;
+  height: 36px;
+}
+
+.result-foot.small .sole{
+  width: 15px;
+  height: 21px;
+}
+
+.result-foot.small .t1{ width: 3px; height: 3px; top: 4px; left: 4px; }
+.result-foot.small .t2{ width: 3px; height: 3px; top: 2px; left: 8px; }
+.result-foot.small .t3{ width: 3px; height: 3px; top: 4px; left: 12px; }
+.result-foot.small .t4{ width: 2px; height: 2px; top: 7px; left: 15px; }
+.result-foot.small .t5{ width: 2px; height: 2px; top: 10px; left: 18px; }
+
+.result-foot.rotate-left{
+  transform: rotate(-12deg);
+}
+
+.result-foot.rotate-right{
+  transform: rotate(12deg);
+}
+
+/* bad mode dots */
+.result-dot{
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.22);
+  animation: floatDeco 4s ease-in-out infinite;
+}
+
+@keyframes floatDeco{
+  0%,100%{ transform: translateY(0px) rotate(0deg); }
+  50%{ transform: translateY(-10px) rotate(4deg); }
+}
+
+@keyframes pulseFoot{
+  0%,100%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.06);
+  }
+}
+
+@media (max-width: 640px){
+  .speech-bubble{
+    padding: 34px 22px;
+  }
+
+  .result-actions{
+    margin-top: 42px;
+  }
+
+  .result-foot.large{
+    width: 34px;
+    height: 48px;
+  }
+
+  .result-foot.large .sole{
+    width: 20px;
+    height: 28px;
+  }
+
+  .result-foot.large .t1{ width: 4px; height: 4px; top: 7px; left: 4px; }
+  .result-foot.large .t2{ width: 4px; height: 4px; top: 5px; left: 9px; }
+  .result-foot.large .t3{ width: 4px; height: 4px; top: 7px; left: 14px; }
+  .result-foot.large .t4{ width: 3px; height: 3px; top: 11px; left: 18px; }
+  .result-foot.large .t5{ width: 3px; height: 3px; top: 14px; left: 21px; }
+}
