@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Water Intake</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="exercise-page">
+    <div class="page-shell">
+      <header class="topbar">
+        <a href="../dashboard/index.html" class="nav-btn">← Dashboard</a>
+
+        <div class="top-tags">
+          <div class="tag orange">PERSONAL HEALTH CARE</div>
+        </div>
+
+        <div class="top-right">
+          <div class="tag mint">WATER CARE</div>
+          <button id="saveWaterBtn" class="save-circle" type="button">Save</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <h1>Water Intake</h1>
+        <p>
+          Slide the droplet on the bottle to adjust your water intake. The more you drink, the more the bottle fills and the flowers bloom around it.
+        </p>
+      </section>
+
+      <section class="main-grid">
+        <div class="left-panel">
+          <div class="visual-card">
+            <div class="visual-inner">
+              <div
+                id="bottleSlider"
+                class="bottle-slider"
+                aria-label="Water intake slider"
+                role="slider"
+                tabindex="0"
+                aria-valuemin="0"
+                aria-valuemax="1500"
+                aria-valuenow="600"
+              >
+                <div id="flowerField" class="flower-field"></div>
+
+                <div class="bottle-wrap">
+                  <div class="bottle-cap"></div>
+                  <div class="bottle-neck"></div>
+
+                  <div class="bottle-body">
+                    <div class="bottle-lines">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+
+                    <div id="waterFill" class="water-fill"></div>
+
+                    <button
+                      id="dropletHandle"
+                      class="droplet-handle"
+                      type="button"
+                      aria-label="Drag water droplet"
+                    >
+                      <svg viewBox="0 0 64 80" class="droplet-svg" aria-hidden="true">
+                        <path
+                          id="dropletPath"
+                          d="M32 4 C32 4 10 28 10 46 C10 63 19 74 32 74 C45 74 54 63 54 46 C54 28 32 4 32 4 Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="slider-labels">
+                  <span id="labelMax" class="slider-label">1500 ml</span>
+                  <span id="labelMin" class="slider-label">0 ml</span>
+                </div>
+
+                <div class="drag-hint">Slide the droplet up and down</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-panel">
+          <div class="stats-row right-stats">
+            <div class="mini-stat">
+              <span class="mini-label">TODAY</span>
+              <strong id="currentAmount">600 ml</strong>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-label">GOAL</span>
+              <strong id="goalAmount">1500 ml</strong>
+            </div>
+          </div>
+
+          <div class="control-card">
+            <h2>Adjust your water</h2>
+            <p class="control-copy">
+              The bottle itself is the slider. Pull the droplet higher to raise the water level and bring more flowers into bloom.
+            </p>
+
+            <div class="quick-row">
+              <button class="quick-btn" type="button" data-amount="200">+200 ml</button>
+              <button class="quick-btn" type="button" data-amount="500">+500 ml</button>
+              <button class="quick-btn" type="button" data-amount="1000">+1000 ml</button>
+            </div>
+          </div>
+
+          <div class="mood-card">
+            <h2>Hydration Mood</h2>
+            <p id="hydrationMessage">A nice start. Keep sipping through the day.</p>
+
+            <div class="mood-bar">
+              <div id="progressFill" class="mood-bar-fill"></div>
+            </div>
+
+            <div class="mood-scale">
+              <span>0</span>
+              <span>750</span>
+              <span>1500</span>
+            </div>
+
+            <div class="mood-meta">
+              <span id="hydrationMood">Fresh start</span>
+              <strong id="progressPercent">40%</strong>
+            </div>
+          </div>
+
+          <div class="flower-card">
+            <h2>Flower Energy</h2>
+            <p><span id="flowerCount">2</span> flowers are blooming right now.</p>
+          </div>
+
+          <div class="action-row">
+            <button id="resetBtn" class="main-btn" type="button">Reset</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
