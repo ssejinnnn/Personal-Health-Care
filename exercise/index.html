@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="exercise-page">
+    <div class="page-shell">
+      <header class="topbar">
+        <a href="../dashboard/index.html" class="nav-btn">← Dashboard</a>
+
+        <div class="top-tags">
+          <div class="tag orange">PERSONAL HEALTH CARE</div>
+        </div>
+
+        <div class="top-right">
+          <div class="tag green">EXERCISE CARE</div>
+          <button id="saveBtnTop" class="save-circle" type="button">Save</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <h1>Exercise</h1>
+        <p>
+          Slide the barbell to adjust your exercise. The farther it stretches, the more active your day becomes.
+        </p>
+      </section>
+
+      <section class="main-grid">
+        <div class="left-panel">
+          <div class="visual-card">
+            <div class="visual-inner">
+              <div class="scene">
+                <div id="sparkWrap" class="spark-wrap" aria-hidden="true">
+                  <div class="spark spark-1">✦</div>
+                  <div class="spark spark-2">✦</div>
+                  <div class="spark spark-3">✦</div>
+                </div>
+
+                <div class="dumbbell-slider-area">
+                  <div class="dumbbell-scale">
+                    <span class="scale-start">0 min</span>
+                    <span class="scale-end">180 min</span>
+                  </div>
+
+                  <div
+                    id="dumbbellSlider"
+                    class="dumbbell-slider"
+                    aria-label="Exercise barbell slider"
+                    role="slider"
+                    tabindex="0"
+                    aria-valuemin="0"
+                    aria-valuemax="180"
+                    aria-valuenow="45"
+                  >
+                    <div id="dumbbellWrap" class="dumbbell-wrap">
+                      <div class="dumbbell">
+                        <div class="plate-stack left-stack">
+                          <span class="plate plate-1"></span>
+                          <span class="plate plate-2"></span>
+                          <span class="plate plate-3"></span>
+                        </div>
+
+                        <div class="bar"></div>
+
+                        <div class="plate-stack right-stack">
+                          <span class="plate plate-1"></span>
+                          <span class="plate plate-2"></span>
+                          <span class="plate plate-3"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="drag-hint">Slide the right plates to change exercise time</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-panel">
+          <div class="stats-row right-stats">
+            <div class="mini-stat">
+              <span class="mini-label">TODAY</span>
+              <strong><span id="exerciseValueTop">45</span> min</strong>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-label">GOAL</span>
+              <strong>60 min</strong>
+            </div>
+          </div>
+
+          <div class="control-card">
+            <h2>Adjust your exercise</h2>
+            <p class="control-copy">
+              The barbell itself is your slider. Pull it longer for more activity, or shorter for less.
+            </p>
+
+            <div class="quick-row">
+              <button class="quick-btn" type="button" data-add="-20">-20 min</button>
+              <button class="quick-btn" type="button" data-add="-10">-10 min</button>
+              <button class="quick-btn" type="button" data-add="10">+10 min</button>
+              <button class="quick-btn" type="button" data-add="20">+20 min</button>
+            </div>
+          </div>
+
+          <div class="mood-card">
+            <h2>Workout Mood</h2>
+            <p id="exerciseMessage">Nice start. Your body is warming up and finding a steady rhythm.</p>
+
+            <div class="mood-bar">
+              <div id="moodBarFill" class="mood-bar-fill"></div>
+            </div>
+
+            <div class="mood-scale">
+              <span>0</span>
+              <span>60</span>
+              <span>180</span>
+            </div>
+
+            <div class="mood-meta">
+              <span id="exerciseMood">Getting moving</span>
+              <strong><span id="exerciseValueBottom">45</span> min</strong>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button id="saveBtn" class="main-btn filled" type="button">Save</button>
+            <button id="resetBtn" class="main-btn" type="button">Reset</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
