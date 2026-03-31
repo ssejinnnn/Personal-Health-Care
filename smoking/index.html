@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smoking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="exercise-page">
+    <div class="page-shell">
+      <header class="topbar">
+        <a href="../dashboard/index.html" class="nav-btn">← Dashboard</a>
+
+        <div class="top-tags">
+          <div class="tag orange">PERSONAL HEALTH CARE</div>
+        </div>
+
+        <div class="top-right">
+          <div class="tag beige">SMOKING CARE</div>
+          <button id="saveBtnTop" class="save-circle" type="button">Save</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <h1>Smoking</h1>
+        <p>
+          Drag the filter to adjust your smoking. The farther it burns down, the heavier and darker the smoke becomes.
+        </p>
+      </section>
+
+      <section class="main-grid">
+        <div class="left-panel">
+          <div class="visual-card">
+            <div class="visual-inner">
+              <div class="scene">
+                <div id="smokeField" class="smoke-field" aria-hidden="true"></div>
+
+                <div class="smoking-slider-area">
+                  <div class="smoking-scale">
+                    <span class="scale-start">0 cig</span>
+                    <span class="scale-end">5 cig</span>
+                  </div>
+
+                  <div
+                    id="smokingSlider"
+                    class="smoking-slider"
+                    aria-label="Smoking cigarette slider"
+                    role="slider"
+                    tabindex="0"
+                    aria-valuemin="0"
+                    aria-valuemax="5"
+                    aria-valuenow="2"
+                  >
+                    <div class="cigarette-wrap">
+                      <div id="cigaretteBody" class="cigarette-body">
+                       <div id="cigaretteBody" class="cigarette-body">
+  <div class="paper-shell"></div>
+  <div id="smokeFill" class="smoke-fill"></div>
+  <div id="filterCap" class="filter-cap"></div>
+  <button id="filterHandle" class="filter-handle" type="button" aria-label="Drag filter handle">
+    <span class="filter-core"></span>
+  </button>
+</div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="drag-hint">Drag the filter circle to adjust smoking amount</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-panel">
+          <div class="stats-row right-stats">
+            <div class="mini-stat">
+              <span class="mini-label">TODAY</span>
+              <strong><span id="smokingValueTop">2.0</span> cig</strong>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-label">GOAL</span>
+              <strong>1.0 cig</strong>
+            </div>
+          </div>
+
+          <div class="control-card">
+            <h2>Adjust your smoking</h2>
+            <p class="control-copy">
+              The cigarette itself is your slider. Pull the filter farther to show more smoking, or keep it longer for a lighter day.
+            </p>
+
+            <div class="quick-row">
+              <button class="quick-btn" type="button" data-add="-1">-1 cig</button>
+              <button class="quick-btn" type="button" data-add="-0.5">-0.5 cig</button>
+              <button class="quick-btn" type="button" data-add="0.5">+0.5 cig</button>
+              <button class="quick-btn" type="button" data-add="1">+1 cig</button>
+            </div>
+          </div>
+
+          <div class="mood-card">
+            <h2>Smoking Mood</h2>
+            <p id="smokingMessage">Light and under control. The cigarette still feels mostly untouched.</p>
+
+            <div class="mood-bar">
+              <div id="moodBarFill" class="mood-bar-fill"></div>
+            </div>
+
+            <div class="mood-scale">
+              <span>0</span>
+              <span>2.5</span>
+              <span>5</span>
+            </div>
+
+            <div class="mood-meta">
+              <span id="smokingMood">Light use</span>
+              <strong><span id="smokingValueBottom">2.0</span> cig</strong>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button id="saveBtn" class="main-btn filled" type="button">Save</button>
+            <button id="resetBtn" class="main-btn" type="button">Reset</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
